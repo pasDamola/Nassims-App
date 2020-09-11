@@ -602,13 +602,13 @@
                 {{ form.bvn }}
               </b-row>
               <b-row class="persona-info-subs">
-                <a>nysc_cert.png</a>
+                <a>Screenshot(8).png</a>
               </b-row>
               <b-row class="persona-info-subs">
-                <a>birth_cert.png</a>
+                <a>Screenshot(15).png</a>
               </b-row>
               <b-row class="persona-info-subs">
-                <a>lga_cert.png</a>
+                <a>Screenshot(16).png</a>
               </b-row>
             </b-col>
             <b-col cols="4" />
@@ -616,9 +616,25 @@
           <b-row>&nbsp;</b-row>
           <b-row>&nbsp;</b-row>
           <b-row>
-            <b-button class="bt" block variant="success" @click="submitApp">
-              Confirm and Submit Application
+            <!-- <b-overlay
+              :show="busy"
+              rounded
+              opacity="0.6"
+              spinner-small
+              spinner-variant="success"
+              @hidden="onHidden"
+            > -->
+            <b-button
+              ref="button"
+              class="bt"
+              block
+              variant="success"
+              :disabled="busy"
+              @click="submitApp"
+            >
+              {{ btnText }}
             </b-button>
+            <!-- </b-overlay> -->
           </b-row>
           <b-row>
             <div class="mx-auto edit">
@@ -646,7 +662,9 @@ export default {
   data () {
     return {
       isPassword: true,
+      btnText: 'Confirm and Submit Application',
       selected: null,
+      busy: false,
       localGovts: [],
       localGovtsOfResidence: [],
       form: {
@@ -734,7 +752,7 @@ export default {
     },
     getSelectedItemOfResidence (state) {
       // Just a regular js function that takes 1 arg
-      this.form.residential_address = state
+      this.form.state_of_residence = state
       this.getLocalGovtOfResidence(state)
     },
     getLocalGovtOfResidence (state) {
@@ -750,6 +768,8 @@ export default {
       this.$store.commit('SET_VIEW_STATE', view)
     },
     submitApp () {
+      this.busy = true
+      this.btnText = 'Loading...'
       this.$axios
         .post(
           'https://guarded-cliffs-51823.herokuapp.com/sample/post/applicants',
@@ -765,8 +785,13 @@ export default {
           this.$router.push({ path: '/confirm' })
         })
         .catch((err) => {
+          this.busy = false
           console.log(err)
         })
+    },
+    onHidden () {
+      // Return focus to the button once hidden
+      this.$refs.button.focus()
     }
 
   }
