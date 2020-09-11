@@ -34,12 +34,12 @@
             <b-button href="/apply" class="btn--primary px-5 py-3">Read More</b-button>
           </b-col>
           <b-col cols="12" md="6">
-            <!-- <div class="about__image ml-md-auto">
-              <div class="about__image__1"></div>
+            <div class="about__image ml-md-auto">
+              <!-- <div class="about__image__1"></div>
               <div class="about__image__2"></div>
               <div class="about__image__3"></div>
-              <div class="about__image__4"></div>
-            </div> -->
+              <div class="about__image__4"></div> -->
+            </div>
           </b-col>
         </b-row>
       </b-container>
@@ -213,43 +213,45 @@ export default {
   &__image {
     position: relative;
     width: 450px;
+    height: 300px;
     max-width: 100%;
+    background-image: url('https://source.unsplash.com/1600x900/?farm');
 
     @media screen and (max-width: 600px) {
       transform: scale(0.5);
     }
 
-    div {
-      position: absolute;
-      border-radius: 8px;
-      box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2);
-      background-color: red;
-    }
+    // div {
+    //   position: absolute;
+    //   border-radius: 8px;
+    //   box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2);
+    //   background-color: red;
+    // }
 
-    &__1 {
-      width: 200px;
-      height: 250px;
-      top: -180px;
-    }
+    // &__1 {
+    //   width: 200px;
+    //   height: 250px;
+    //   top: -180px;
+    // }
 
-    &__2 {
-      width: 180px;
-      height: 200px;
-      right: 0;
-      top: -180px;
-    }
+    // &__2 {
+    //   width: 180px;
+    //   height: 200px;
+    //   right: 0;
+    //   top: -180px;
+    // }
 
-    &__3,
-    &__4 {
-      width: 150px;
-      height: 180px;
-    }
+    // &__3,
+    // &__4 {
+    //   width: 150px;
+    //   height: 180px;
+    // }
 
-    &__3 {
-      bottom: -180px;
-      left: 80px;
-      background-color: green;
-    }
+    // &__3 {
+    //   bottom: -180px;
+    //   left: 80px;
+    //   background-color: green;
+    // }
   }
 }
 
