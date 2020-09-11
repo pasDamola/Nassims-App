@@ -51,6 +51,7 @@
             >
               <b-form-file
                 v-model="form.passport_photo"
+                class="file"
                 :state="Boolean(form.passport_photo)"
                 placeholder="Choose a file or drop it here..."
                 drop-placeholder="Drop file here..."
@@ -697,6 +698,7 @@ export default {
   },
   mounted () {
     this.$axios.defaults.headers.common.Authorization = 'Token 5c96d7b979c2bc8:f8cacdd5a91ed76'
+    this.$axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
   },
   methods: {
     getSelectedItem (state) {
@@ -728,20 +730,29 @@ export default {
       this.$store.commit('SET_VIEW_STATE', view)
     },
     submitApp () {
-      this.loading = true
-      console.log(this.form)
       this.$axios
-        .post('https://nasim.sandbox.bluetag.tech/api/resource/Applicants', this.form)
+        .post('https://guarded-cliffs-51823.herokuapp.com/sample/post/applicants', this.form, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: 'Token 5c96d7b979c2bc8:f8cacdd5a91ed76'
+          }
+        })
         .then((response) => {
-          // this.loading = false
           console.log(response)
         })
         .catch((err) => {
-          this.error.message = err.response.message
-          this.error.status = true
-          this.loading = false
+          console.log(err)
         })
+    },
+    getBase64 (file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = () => resolve(reader.result)
+        reader.onerror = error => reject(error)
+      })
     }
+
   }
 }
 </script>
