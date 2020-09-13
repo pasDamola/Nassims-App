@@ -698,7 +698,7 @@ export default {
       },
       states: [],
       programmes: [
-        { text: 'Select A Programme', value: null },
+        { text: 'Select A Programme', value: null, disabled: true },
         { text: 'N-Power Agro', value: 'N-Power Agro' },
         { text: 'N-Power Tax', value: 'N-Power Tax' },
         { text: 'N-Power Build', value: 'N-Power Build' },
@@ -739,7 +739,22 @@ export default {
   computed: {
     ...mapState(['isAppForm'])
   },
+  mounted () {
+    this.getProgrammes()
+  },
   methods: {
+    getProgrammes () {
+      this.$axios.get('https://sleepy-wildwood-51098.herokuapp.com/programme/graduates').then(({ data }) => {
+        const programmes = data.data.map((el) => {
+          return {
+            text: el.name,
+            value: el.name
+          }
+        })
+        this.programmes = programmes
+        this.programmes.unshift({ text: 'Select A Programme', value: null, disabled: true })
+      })
+    },
     getSelectedItem (state) {
       // Just a regular js function that takes 1 arg
       this.form.state_of_origin = state
