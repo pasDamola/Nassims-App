@@ -106,7 +106,7 @@
         </b-tab>
       </b-container>
       <b-tab title="Applications">
-        <Applications />
+        <Applications :user="userDetails" />
       </b-tab>
     </b-tabs>
   </div>
