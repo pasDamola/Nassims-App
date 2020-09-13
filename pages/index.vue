@@ -11,7 +11,9 @@
               Registration for N-POWER Batch C Scheme is now ongoing. Get lifelong skills
               to become a solutions provide in your community
             </p>
-            <b-button href="/apply" class="btn--secondary px-5 py-3">Apply Now</b-button>
+            <b-button href="/apply" class="btn--secondary px-5 py-3">
+              Apply Now
+            </b-button>
           </b-col>
         </b-row>
       </b-container>
@@ -20,7 +22,9 @@
       <b-container>
         <b-row align-h="between" align-v="center">
           <b-col cols="12" md="6">
-            <h2 class="font-weight-bold">About Us</h2>
+            <h2 class="font-weight-bold">
+              About Us
+            </h2>
             <p class="lighten my-5">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Nesciunt provident, quos repudiandae explicabo, ipsum qui
@@ -31,7 +35,9 @@
               ad ea iure delectus cumque consequuntur at dolores nemo
               repellendus. Necessitatibus rerum quibusdam ullam facere.
             </p>
-            <b-button href="/apply" class="btn--primary px-5 py-3">Read More</b-button>
+            <b-button href="/apply" class="btn--primary px-5 py-3">
+              Read More
+            </b-button>
           </b-col>
           <b-col cols="12" md="6">
             <div class="about__image ml-md-auto">
@@ -46,16 +52,20 @@
     </section>
     <section class="programmes">
       <b-container>
-        <h2 class="text-center font-weight-bold">Our Programmes</h2>
+        <h2 class="text-center font-weight-bold">
+          Our Programmes
+        </h2>
         <p class="text-center lighten mx-auto my-3">
           Our programmes are specifically designed to empower, train and
           uplift millions of abandoned Nigerians in every part of the country.
         </p>
         <b-row align-h="between">
           <b-col class="program px-0 m-4">
-            <div class="program__image"></div>
+            <div class="program__image" />
             <div class="p-4">
-              <h3 class="program__name font-weight-bold">N-POWER</h3>
+              <h3 class="program__name font-weight-bold">
+                N-POWER
+              </h3>
               <p class="lighten mt-3 mb-5">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Nesciunt provident, quos repudiandae explicabo, ipsum qui
@@ -66,13 +76,17 @@
                 ad ea iure delectus cumque consequuntur at dolores nemo
                 repellendus. Necessitatibus rerum quibusdam ullam facere.
               </p>
-              <b-button href="/apply" class="btn--primary px-5 py-3">Apply Now</b-button>
+              <b-button href="/apply" class="btn--primary px-5 py-3">
+                Apply Now
+              </b-button>
             </div>
           </b-col>
           <b-col class="program px-0 m-4">
-            <div class="program__image"></div>
+            <div class="program__image" />
             <div class="p-4">
-              <h3 class="program__name font-weight-bold">Trader Moni</h3>
+              <h3 class="program__name font-weight-bold">
+                Trader Moni
+              </h3>
               <p class="lighten mt-3 mb-5">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Nesciunt provident, quos repudiandae explicabo, ipsum qui
@@ -83,7 +97,9 @@
                 ad ea iure delectus cumque consequuntur at dolores nemo
                 repellendus. Necessitatibus rerum quibusdam ullam facere.
               </p>
-              <b-button href="/apply" class="btn--primary px-5 py-3">Apply Now</b-button>
+              <b-button href="/apply" class="btn--primary px-5 py-3">
+                Apply Now
+              </b-button>
             </div>
           </b-col>
         </b-row>
@@ -91,13 +107,15 @@
     </section>
     <section class="news-section">
       <b-container>
-        <h2 class="text-center font-weight-bold">Latest News</h2>
+        <h2 class="text-center font-weight-bold">
+          Latest News
+        </h2>
         <p class="text-center lighten mx-auto my-3">
           Keep up with the latest updates about programmes and events
         </p>
         <b-row class="news my-5" align-h="between">
           <b-col class="item px-0">
-            <div class="item__image"></div>
+            <div class="item__image" />
             <div class="p-4 pb-0">
               <h3 class="item__name font-weight-bold">
                 Impacting Lives During A Global Pandemic
@@ -115,7 +133,7 @@
             </div>
           </b-col>
           <b-col class="item px-0">
-            <div class="item__image"></div>
+            <div class="item__image" />
             <div class="p-4 pb-0">
               <h3 class="item__name font-weight-bold">
                 Impacting Lives During A Global Pandemic
@@ -133,7 +151,7 @@
             </div>
           </b-col>
           <b-col class="item px-0">
-            <div class="item__image"></div>
+            <div class="item__image" />
             <div class="p-4 pb-0">
               <h3 class="item__name font-weight-bold">
                 Impacting Lives During A Global Pandemic
@@ -155,7 +173,9 @@
     </section>
     <section class="partners">
       <b-container>
-        <h2 class="text-center font-weight-bold">Our Partners</h2>
+        <h2 class="text-center font-weight-bold">
+          Our Partners
+        </h2>
         <b-row class="my-5">
           <b-col class="partner">
             <img src="/bank.svg" alt="">

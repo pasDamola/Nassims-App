@@ -100,6 +100,9 @@ h2 {
       height: 50px;
   }
 
+  .shift-down{
+      padding-bottom: 20px;
+  }
   .edit{
       padding-top: 10px;
       color: #288855;
@@ -112,4 +115,47 @@ h2 {
       display: block;
       font-weight: bold;
       color: #444444;
+  }
+
+  .beneficiary{
+    background-color: #F7F7F7;
+    padding: 50px;
+  }
+
+  .personal{
+    color: #262627;
+    font-size: 28px;
+  }
+
+  .hidden{
+    color: #262627;
+    font-size: 28px;
+    visibility: hidden;
+  }
+
+  .name{
+      font-size: 24px;
+      color: #262627; 
+  }
+
+  .mail{
+      font-size: 18px;
+      color: #262627;
+  }
+
+  .ben{
+      font-size: 16px;
+      color: #288855;
+  }
+
+  .ava{
+      margin: auto;
+  }
+
+  .rectangle-1 {
+    height: 31px;
+    width: 176px;
+    border-radius: 15.5px;
+    background-color: rgba(184,251,215,0.2);
+    margin: auto;
   }
