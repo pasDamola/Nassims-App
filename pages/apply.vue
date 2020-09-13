@@ -639,6 +639,7 @@
           <b-row>
             <div class="mx-auto edit">
               <span
+                class="shift-down"
                 @click="changeView(true)"
               >Go Back And Edit the Details</span>
             </div>
