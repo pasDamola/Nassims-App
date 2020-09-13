@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="user">
     <b-tabs
       active-nav-item-class="tab--active"
       content-class="mt-3 tabs"
@@ -155,6 +155,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.user {
+  min-height: calc(100vh - 73px);
+}
+
 .beneficiary{
   background-color: #F7F7F7;
   padding: 10px 0;

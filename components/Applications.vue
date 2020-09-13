@@ -6,7 +6,7 @@
     >
       <b-tab title="Accepted" active>
         <div class="apps">
-          <b-table hover :items="items" :fields="fields" />
+          <b-table hover :items="items" :fields="fields" responsive />
         </div>
       </b-tab>
       <b-tab title="Applied">
@@ -26,7 +26,7 @@
 export default {
   data: () => ({
     items: [],
-    fields: ['first_name', 'surname', 'date', 'phone_number', 'residential_address']
+    fields: ['programme', 'batch', 'deadline', 'status']
   })
 }
 </script>
