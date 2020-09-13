@@ -32,15 +32,6 @@ export default {
       items: [],
       fields: ['first_name', 'surname', 'date', 'phone_number', 'residential_address']
     }
-  },
-
-  mounted () {
-    this.$axios.get('https://guarded-cliffs-51823.herokuapp.com/sample/fetch/Applicants')
-      .then((response) => {
-        console.log(response.data.data)
-        this.items = response.data.data
-      })
-    console.log(this.items)
   }
 }
 </script>

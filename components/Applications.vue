@@ -113,7 +113,6 @@ export default {
     showDetails ({ item }) {
       this.showModal = true
       this.selectedData = item
-      console.log(item)
     }
   }
 }

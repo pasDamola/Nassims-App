@@ -79,7 +79,6 @@ export default {
     logIn () {
       this.loading = true
       this.alert.status = false
-      console.log(this.user)
       this.$axios.post('https://sleepy-wildwood-51098.herokuapp.com/applicants/login', this.user).then((res) => {
         this.loading = false
         if (this.saveDetails) {
