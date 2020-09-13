@@ -14,16 +14,29 @@
         </div>
         <div class="col-12 col-md-6 login__form">
           <form>
+            <b-alert v-model="alert.status" :variant="alert.type" dismissible>
+              {{ alert.message }}
+            </b-alert>
             <div class="form-group my-4">
-              <input id="email" type="email" class="form-control form-control-lg" placeholder="Enter Email Address">
+              <input
+                v-model="user.email"
+                id="email"
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Enter Email Address">
             </div>
             <div class="form-group my-4">
-              <input id="password" type="password" class="form-control form-control-lg" placeholder="Enter Password">
+              <input
+                v-model="user.password"
+                id="password"
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="Enter Password">
             </div>
             <div class="row justify-content-between mx-0">
               <div class="form-group">
                 <div class="form-check">
-                  <input id="remember" class="form-check-input" type="checkbox">
+                  <input v-model="saveDetails" id="remember" class="form-check-input" type="checkbox">
                   <label class="form-check-label" for="remember">
                     Keep me logged in
                   </label>
@@ -31,8 +44,14 @@
               </div>
               <a href="#recover">Recover Password</a>
             </div>
-            <button type="submit" class="btn btn--primary w-100">
-              Proceed
+            <button
+              type="submit"
+              class="btn btn--primary w-100"
+              @click="logIn"
+              :disabled="!user.email || !user.password || loading"
+            >
+              <b-spinner v-if="loading" variant="light" label="Spinning" />
+              <span v-else>Proceed</span>
             </button>
           </form>
         </div>
@@ -43,7 +62,43 @@
 
 <script>
 export default {
-
+  data: () => ({
+    user: {
+      email: '',
+      password: ''
+    },
+    alert: {
+      status: false,
+      type: 'danger',
+      message: ''
+    },
+    loading: false,
+    saveDetails: false
+  }),
+  methods: {
+    logIn () {
+      this.loading = true
+      this.alert.status = false
+      console.log(this.user)
+      this.$axios.post('https://sleepy-wildwood-51098.herokuapp.com/applicants/login', this.user).then((res) => {
+        this.loading = false
+        if (this.saveDetails) {
+          localStorage.setItem('nasims-user', JSON.stringify(res.data.user))
+        } else {
+          sessionStorage.setItem('nasims-user', JSON.stringify(res.data.user))
+        }
+        const id = window.btoa(res.data.user.email)
+        this.$router.push(`/applicant/${id}`)
+      }).catch((err) => {
+        this.loading = false
+        this.alert.status = true
+        this.alert.message = 'Something went wrong, please try again'
+        if (err.response.status === 422) {
+          this.alert.message = 'Incorrect credentials'
+        }
+      })
+    }
+  }
 }
 </script>
 
