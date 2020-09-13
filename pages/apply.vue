@@ -1,6 +1,6 @@
 <template>
   <div v-if="isAppForm">
-    <b-container>
+    <b-container class="pb-4">
       <b-row>&nbsp;</b-row>
       <b-row />
       <b-row />

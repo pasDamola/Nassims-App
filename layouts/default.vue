@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-navbar />
-    <nuxt />
+    <nuxt class="app-body" />
     <app-footer />
   </div>
 </template>
@@ -53,5 +53,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.app-body {
+  padding-top: 81px;
 }
 </style>
