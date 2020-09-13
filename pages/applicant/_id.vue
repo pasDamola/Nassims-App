@@ -13,35 +13,35 @@
                 <b-row>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">Surname</p>
-                    <p class="text">Oluchukwu</p>
+                    <p class="text">{{userDetails.surname}}</p>
                   </b-col>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">First Name</p>
-                    <p class="text">Grace</p>
+                    <p class="text">{{userDetails.first_name}}</p>
                   </b-col>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">Other Names</p>
-                    <p class="text">Margaret Elizabeth</p>
+                    <p class="text">{{userDetails.other_name}}</p>
                   </b-col>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">Date Of Birth</p>
-                    <p class="text">01/01/1994</p>
+                    <p class="text">{{userDetails.date}}</p>
                   </b-col>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">Email Address</p>
-                    <p class="text">Oluchukewgr@gmail.com</p>
+                    <p class="text">{{userDetails.email}}</p>
                   </b-col>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">Phone Number</p>
-                    <p class="text">08117866543</p>
+                    <p class="text">{{userDetails.phone_number}}</p>
                   </b-col>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">State Of Origin</p>
-                    <p class="text">Abia State</p>
+                    <p class="text">{{userDetails.state_of_origin}}</p>
                   </b-col>
                   <b-col class="my-2" cols="12" md="6">
                     <p class="title">Local Government Area Of Origin</p>
-                    <p class="text">Omueri LGA</p>
+                    <p class="text">{{userDetails.lga}}</p>
                   </b-col>
                 </b-row>
               </b-card>
@@ -50,8 +50,8 @@
               <span class="hidden">Personal Details</span>
               <b-card class="text-center">
                   <b-avatar src="https://placekitten.com/300/300" size="6rem"></b-avatar>
-                  <div class="text-center name">Oluchukwu Grace</div>
-                  <div class="text-center mail">Oluchukewgr@gmail.com</div>
+                  <div class="text-center name">{{userDetails.surname}} {{userDetails.first_name}}</div>
+                  <div class="text-center mail">{{userDetails.email}}</div>
                   <div>&nbsp;</div>
                   <div class="text-center ben rectangle-1">
                       Beneficiary
@@ -67,15 +67,15 @@
                 <b-row>
                   <b-col class="my-3" cols="12">
                     <p class="title">Residential Address</p>
-                    <p class="text">18 Salua Street, off anthony bus stop, Ikeja, Lagos State</p>
+                    <p class="text">{{userDetails.residential_address}}</p>
                   </b-col>
                   <b-col class="my-3" cols="12">
                     <p class="title">State Of Residence</p>
-                    <p class="text">Osun State</p>
+                    <p class="text">{{userDetails.state_of_residence}}</p>
                   </b-col>
                   <b-col class="my-3" cols="12">
                     <p class="title">Local Government Area Of Residence</p>
-                    <p class="text">Irewole LGA</p>
+                    <p class="text">{{userDetails.local_government_of_residence}}</p>
                   </b-col>
                 </b-row>
               </b-card>
@@ -87,15 +87,15 @@
                 <b-row>
                   <b-col class="my-3" cols="12">
                     <p class="title">Highest Level Of Education</p>
-                    <p class="text">Bachelor's Degree</p>
+                    <p class="text">{{userDetails.highest_level_of_education}}</p>
                   </b-col>
                   <b-col class="my-3" cols="12">
                     <p class="title">Institution</p>
-                    <p class="text">University Of Benin</p>
+                    <p class="text">{{userDetails.institution}}</p>
                   </b-col>
                   <b-col class="my-3" cols="12">
                     <p class="title">Year Of Graduation</p>
-                    <p class="text">2016</p>
+                    <p class="text">{{userDetails.year_of_graduation}}</p>
                   </b-col>
                 </b-row>
               </b-card>
@@ -146,7 +146,7 @@ export default {
   mounted () {
     this.$axios.get('https://guarded-cliffs-51823.herokuapp.com/sample/fetch/Applicants')
       .then((response) => {
-        console.log(response.data.data)
+        console.log('response', response.data.data)
         this.items = response.data.data
       })
     console.log(this.items)
