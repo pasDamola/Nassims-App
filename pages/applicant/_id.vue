@@ -49,7 +49,7 @@
             <b-col cols="12" md="4">
               <span class="hidden">Personal Details</span>
               <b-card class="text-center">
-                  <b-avatar src="https://placekitten.com/300/300" size="6rem"></b-avatar>
+                  <b-avatar :src="userDetails.passport_photo" size="6rem"></b-avatar>
                   <div class="text-center name">{{userDetails.surname}} {{userDetails.first_name}}</div>
                   <div class="text-center mail">{{userDetails.email}}</div>
                   <div>&nbsp;</div>
@@ -142,14 +142,6 @@ export default {
     if (this.userDetails === null) {
       this.$router.push('/login')
     }
-  },
-  mounted () {
-    this.$axios.get('https://guarded-cliffs-51823.herokuapp.com/sample/fetch/Applicants')
-      .then((response) => {
-        console.log('response', response.data.data)
-        this.items = response.data.data
-      })
-    console.log(this.items)
   }
 }
 </script>
