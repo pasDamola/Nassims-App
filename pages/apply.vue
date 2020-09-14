@@ -788,7 +788,7 @@ export default {
       this.btnText = 'Loading...'
       this.$axios
         .post(
-          'https://guarded-cliffs-51823.herokuapp.com/sample/post/applicants',
+          'https://sleepy-wildwood-51098.herokuapp.com/sample/post/applicants',
           this.form,
           {
             headers: {

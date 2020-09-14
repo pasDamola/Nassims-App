@@ -5,20 +5,23 @@
       <h3 class="hooray-application">
         Hooray! Application Submitted
       </h3>
-      <div>&nbsp;</div>
-      <div>&nbsp;</div>
       <p class="nbatch-paragraph">
         Your Application for N-Power Batch C has been Submitted succesfully
       </p>
-      <div>&nbsp;</div>
-      <div>&nbsp;</div>
+      <a href="/login" class="small">
+        Login to view your application
+      </a>
     </div>
   </main>
 </template>
 
-<style>
+<style lang="scss">
 .main3 {
-  padding: 100px;
+  /* padding: 100px; */
+  height: calc(100vh - 92px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -45,6 +48,15 @@
   font-weight: 500;
   letter-spacing: 0;
   text-align: center;
-  margin-top: -40px;
+}
+
+.small {
+  font-size: 0.9rem;
+  color: #25c470;
+  &:hover {
+    color: #25c470;
+    opacity: 0.9;
+    text-decoration: none;
+  }
 }
 </style>
