@@ -19,24 +19,26 @@
             </b-alert>
             <div class="form-group my-4">
               <input
-                v-model="user.email"
                 id="email"
+                v-model="user.email"
                 type="email"
                 class="form-control form-control-lg"
-                placeholder="Enter Email Address">
+                placeholder="Enter Email Address"
+              >
             </div>
             <div class="form-group my-4">
               <input
-                v-model="user.password"
                 id="password"
+                v-model="user.password"
                 type="password"
                 class="form-control form-control-lg"
-                placeholder="Enter Password">
+                placeholder="Enter Password"
+              >
             </div>
             <div class="row justify-content-between mx-0">
               <div class="form-group">
                 <div class="form-check">
-                  <input v-model="saveDetails" id="remember" class="form-check-input" type="checkbox">
+                  <input id="remember" v-model="saveDetails" class="form-check-input" type="checkbox">
                   <label class="form-check-label" for="remember">
                     Keep me logged in
                   </label>
@@ -47,8 +49,8 @@
             <button
               type="submit"
               class="btn btn--primary w-100"
-              @click="logIn"
               :disabled="!user.email || !user.password || loading"
+              @click="logIn"
             >
               <b-spinner v-if="loading" variant="light" label="Spinning" />
               <span v-else>Proceed</span>
@@ -79,7 +81,7 @@ export default {
     logIn () {
       this.loading = true
       this.alert.status = false
-      this.$axios.post('https://sleepy-wildwood-51098.herokuapp.com/applicants/login', this.user).then((res) => {
+      this.$axios.post('https://sleepy-wildwood-51098.herokuapp.com/applicants/', this.user).then((res) => {
         this.loading = false
         if (this.saveDetails) {
           localStorage.setItem('nasims-user', JSON.stringify(res.data.user))

@@ -39,12 +39,7 @@
               class="titless"
               label-for="input-1"
             >
-              <b-form-select
-                id="input-3"
-                v-model="form.programme"
-                :options="programmes"
-                required
-              />
+              <b-form-select id="input-3" v-model="form.programme" :options="programmes" required />
             </b-form-group>
             <div>&nbsp;</div>
             <h3>Personal Information</h3>
@@ -165,10 +160,7 @@
                   class="titless"
                   label-for="input-3"
                 >
-                  <b-form-select
-                    v-model="form.state_of_origin"
-                    @change="getSelectedItem"
-                  >
+                  <b-form-select v-model="form.state_of_origin" @change="getSelectedItem">
                     <option
                       v-for="(selectOption, indexOpt) in states"
                       :key="indexOpt"
@@ -234,8 +226,7 @@
                 </b-form-group>
               </b-col>
             </b-row>&nbsp;
-            <hr>
-            &nbsp;
+            <hr>&nbsp;
             <h3>Residential Details</h3>
             <b-form-group
               id="input-group-2"
@@ -280,10 +271,7 @@
                   class="titless"
                   label-for="input-3"
                 >
-                  <b-form-select
-                    id="input-3"
-                    v-model="form.local_government_of_residence"
-                  >
+                  <b-form-select id="input-3" v-model="form.local_government_of_residence">
                     <option
                       v-for="(selectedState, i) in localGovtsOfResidence"
                       :key="i"
@@ -295,8 +283,7 @@
                 </b-form-group>
               </b-col>
             </b-row>&nbsp;
-            <hr>
-            &nbsp;
+            <hr>&nbsp;
             <h3>Educational Background</h3>
             <b-form-group
               id="input-group-2"
@@ -343,8 +330,7 @@
                 </b-form-group>
               </b-col>
             </b-row>&nbsp;
-            <hr>
-            &nbsp;
+            <hr>&nbsp;
             <h3>Other Details</h3>
             <b-form-group
               id="input-group-2"
@@ -352,12 +338,7 @@
               class="titless"
               label-for="input-3"
             >
-              <b-form-input
-                id="input-2"
-                v-model="form.bvn"
-                required
-                placeholder="Enter BVN"
-              />
+              <b-form-input id="input-2" v-model="form.bvn" required placeholder="Enter BVN" />
             </b-form-group>
             <b-form-group
               id="input-group-2"
@@ -399,6 +380,7 @@
                   class="bt"
                   block
                   variant="success"
+                  :disabled="!form.passport_photo || !form.email || !form.surname || busy"
                   @click="changeView(false)"
                 >
                   Complete Application
@@ -623,7 +605,7 @@
               spinner-small
               spinner-variant="success"
               @hidden="onHidden"
-            > -->
+            >-->
             <b-button
               ref="button"
               class="bt"
@@ -638,10 +620,7 @@
           </b-row>
           <b-row>
             <div class="mx-auto edit">
-              <span
-                class="shift-down"
-                @click="changeView(true)"
-              >Go Back And Edit the Details</span>
+              <span class="shift-down" @click="changeView(true)">Go Back And Edit the Details</span>
             </div>
           </b-row>
         </b-col>
@@ -679,12 +658,13 @@ export default {
         state_of_origin: '',
         batch: 'batch C',
         date: '',
+        gender: 'Male',
         bvn: '',
         email: '',
         surname: '',
         first_name: '',
         state_of_residence: '',
-        password: '',
+        pass: '',
         residential_address: '',
         local_government_of_residence: '',
         institution: '',
@@ -744,16 +724,22 @@ export default {
   },
   methods: {
     getProgrammes () {
-      this.$axios.get('https://sleepy-wildwood-51098.herokuapp.com/programme/graduates').then(({ data }) => {
-        const programmes = data.data.map((el) => {
-          return {
-            text: el.name,
-            value: el.name
-          }
+      this.$axios
+        .get('https://sleepy-wildwood-51098.herokuapp.com/programme/graduates')
+        .then(({ data }) => {
+          const programmes = data.data.map((el) => {
+            return {
+              text: el.name,
+              value: el.name
+            }
+          })
+          this.programmes = programmes
+          this.programmes.unshift({
+            text: 'Select A Programme',
+            value: null,
+            disabled: true
+          })
         })
-        this.programmes = programmes
-        this.programmes.unshift({ text: 'Select A Programme', value: null, disabled: true })
-      })
     },
     getSelectedItem (state) {
       // Just a regular js function that takes 1 arg
@@ -788,7 +774,7 @@ export default {
       this.btnText = 'Loading...'
       this.$axios
         .post(
-          'https://sleepy-wildwood-51098.herokuapp.com/sample/post/applicants',
+          'https://sleepy-wildwood-51098.herokuapp.com/applicants',
           this.form,
           {
             headers: {
@@ -802,6 +788,7 @@ export default {
         })
         .catch((err) => {
           this.busy = false
+          this.btnText = 'Confirm and Submit Application'
           console.log(err)
         })
     },
@@ -809,7 +796,6 @@ export default {
       // Return focus to the button once hidden
       this.$refs.button.focus()
     }
-
   }
 }
 </script>

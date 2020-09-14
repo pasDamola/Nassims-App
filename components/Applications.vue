@@ -4,40 +4,74 @@
       <b-card>
         <b-row>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">Surname</p>
-            <p class="text">{{ selectedData.surname }}</p>
+            <p class="title">
+              Surname
+            </p>
+            <p class="text">
+              {{ selectedData.surname }}
+            </p>
           </b-col>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">First Name</p>
-            <p class="text">{{ selectedData.first_name }}</p>
+            <p class="title">
+              First Name
+            </p>
+            <p class="text">
+              {{ selectedData.first_name }}
+            </p>
           </b-col>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">Other Names</p>
-            <p class="text">{{ selectedData.other_name }}</p>
+            <p class="title">
+              Other Names
+            </p>
+            <p class="text">
+              {{ selectedData.other_name }}
+            </p>
           </b-col>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">Date Of Birth</p>
-            <p class="text">{{ selectedData.date }}</p>
+            <p class="title">
+              Date Of Birth
+            </p>
+            <p class="text">
+              {{ selectedData.date }}
+            </p>
           </b-col>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">Email Address</p>
-            <p class="text">{{ selectedData.email }}</p>
+            <p class="title">
+              Email Address
+            </p>
+            <p class="text">
+              {{ selectedData.email }}
+            </p>
           </b-col>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">Phone Number</p>
-            <p class="text">{{ selectedData.phone_number }}</p>
+            <p class="title">
+              Phone Number
+            </p>
+            <p class="text">
+              {{ selectedData.phone_number }}
+            </p>
           </b-col>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">{{ selectedData.state_of_origin }}</p>
-            <p class="text">Abia State</p>
+            <p class="title">
+              {{ selectedData.state_of_origin }}
+            </p>
+            <p class="text">
+              Abia State
+            </p>
           </b-col>
           <b-col class="my-2" cols="12" md="6">
-            <p class="title">Local Government Area Of Origin</p>
-            <p class="text">{{ selectedData.lga }}</p>
+            <p class="title">
+              Local Government Area Of Origin
+            </p>
+            <p class="text">
+              {{ selectedData.lga }}
+            </p>
           </b-col>
         </b-row>
       </b-card>
-      <b-button class="mt-3" block @click="showModal = false">Close</b-button>
+      <b-button class="mt-3" block @click="showModal = false">
+        Close
+      </b-button>
     </b-modal>
     <b-tabs
       active-nav-item-class="tab--active"
@@ -53,20 +87,16 @@
               <button
                 class="btn btn--primary btn-sm"
                 @click="showDetails(data)"
-              >View details</button>
+              >
+                View details
+              </button>
             </template>
           </b-table>
         </div>
       </b-tab>
-      <b-tab title="Applied">
-
-      </b-tab>
-      <b-tab title="Ongoing">
-
-      </b-tab>
-      <b-tab title="Closed">
-
-      </b-tab>
+      <b-tab title="Applied" />
+      <b-tab title="Ongoing" />
+      <b-tab title="Closed" />
     </b-tabs>
   </div>
 </template>
