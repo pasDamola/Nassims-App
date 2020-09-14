@@ -380,6 +380,7 @@
                   class="bt"
                   block
                   variant="success"
+                  :disabled="!form.passport_photo || !form.email || !form.surname || busy"
                   @click="changeView(false)"
                 >
                   Complete Application
@@ -787,7 +788,7 @@ export default {
         })
         .catch((err) => {
           this.busy = false
-          this.btnText = "Confirm and Submit Application"
+          this.btnText = 'Confirm and Submit Application'
           console.log(err)
         })
     },
