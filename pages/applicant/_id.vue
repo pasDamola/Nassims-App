@@ -94,7 +94,7 @@
                 </div>
                 <div>&nbsp;</div>
                 <div class="text-center">
-                  N-Power Batch C
+                  N-Power Batch D
                 </div>
               </b-card>
             </b-col>

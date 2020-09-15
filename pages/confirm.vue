@@ -6,7 +6,7 @@
         Hooray! Application Submitted
       </h3>
       <p class="nbatch-paragraph">
-        Your Application for N-Power Batch C has been Submitted succesfully
+        Your Application for N-Power Batch D has been Submitted succesfully
       </p>
       <a href="/login" class="small">
         Login to view your application

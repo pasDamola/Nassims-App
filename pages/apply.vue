@@ -15,7 +15,7 @@
         <b-col />
         <b-col cols="8">
           <div class="batchC">
-            N-Power Batch C Registration
+            N-Power Batch D Registration
             <div />
           </div>
         </b-col>
@@ -692,7 +692,7 @@ export default {
         { text: 'Select highest level of Education', value: null },
         {
           text: 'Junior School Certificate Examination (JSCE)',
-          value: 'Junior School Certificate Exam (JSCE)'
+          value: 'Junior School Certificate Exam(JSCE)'
         },
         {
           text: 'Senior School Certificate Examination (SSCE)',
