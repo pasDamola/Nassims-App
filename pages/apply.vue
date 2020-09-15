@@ -202,7 +202,7 @@
                   <b-icon icon="search" />
                   </b-input-group-prepend>-->
                   <b-form-input
-                    v-model="form.password"
+                    v-model="form.pass"
                     :type="isPassword ? 'password' : 'text'"
                     required
                     placeholder="Enter Password"
@@ -218,7 +218,7 @@
                 >
                   <b-form-input
                     id="input-3"
-                    v-model="form.password"
+                    v-model="form.pass"
                     type="password"
                     required
                     placeholder="Enter Password"
