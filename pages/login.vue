@@ -81,7 +81,7 @@ export default {
     logIn () {
       this.loading = true
       this.alert.status = false
-      this.$axios.post('https://sleepy-wildwood-51098.herokuapp.com/applicants/', this.user).then((res) => {
+      this.$axios.post('https://sleepy-wildwood-51098.herokuapp.com/applicants/login', this.user).then((res) => {
         this.loading = false
         if (this.saveDetails) {
           localStorage.setItem('nasims-user', JSON.stringify(res.data.user))
